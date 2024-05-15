@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawdź największą i najmniejszą liczbę</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+			text-align: center;
+			background-color: #f4f4f4;
+        }
+        input[type="number"] {
+            width: 100px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sprawdź największą i najmniejszą liczbę</h2>
+    <div>
+        <label for="number1">Liczba 1: </label>
+        <input type="number" id="number1" required>
+    </div>
+    <div>
+        <label for="number2">Liczba 2: </label>
+        <input type="number" id="number2" required>
+    </div>
+    <div>
+        <label for="number3">Liczba 3: </label>
+        <input type="number" id="number3" required>
+    </div>
+    <button onclick="findMinMax()">Sprawdź</button>
+    <div id="result"></div>
+
+    <script>
+        function findMinMax() {
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            const num3 = parseFloat(document.getElementById('number3').value);
+            
+            const min = Math.min(num1, num2, num3);
+            const max = Math.max(num1, num2, num3);
+            
+            document.getElementById('result').innerHTML = `Najmniejsza liczba: ${min}, Największa liczba: ${max}`;
+        }
+    </script>
+</body>
+</html>
